@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tugas Basis Data 2 - Blog Bintang</title>
+  <style>
+    :root {
+      --primary: #d34b8f;
+      --secondary: #eff6fb;
+      --text: #333;
+      --accent: #db478c;
+      --muted: #6b7280;
+      --card: #ffffff;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      background: var(--secondary);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(90deg, var(--primary), #e078bd);
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 26px;
+      letter-spacing: 0.5px;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      background: var(--card);
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+    }
+
+    .post-title {
+      color: var(--accent);
+      font-size: 28px;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      color: var(--primary);
+      margin-top: 28px;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 12px;
+      margin: 16px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    th, td {
+      border: 1px solid #e5e7eb;
+      padding: 10px 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    td {
+      background-color: #fafafa;
+    }
+
+    footer {
+      text-align: center;
+      padding: 18px;
+      font-size: 14px;
+      color: var(--muted);
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        padding: 20px;
+      }
+      .post-title {
+        font-size: 22px;
+      }
+    }
+.profile-section {
+  text-align: center;
+  background: linear-gradient(135deg, #ffe0f0, #e0f7ff);
+  padding: 30px 20px;
+  border-radius: 20px;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 4px 12px rgba(255, 182, 193, 0.4);
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #ffb6c1;
+  box-shadow: 0 0 10px rgba(255, 182, 193, 0.6);
+  transition: transform 0.3s ease;
+}
+
+.profile-pic:hover {
+  transform: scale(1.05) rotate(3deg);
+}
+
+.profile-name {
+  font-size: 1.6rem;
+  color: #ff69b4;
+  margin-top: 10px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.profile-kelas {
+  font-size: 1.1rem;
+  color: #5b5b8a;
+  font-style: italic;
+  background-color: #f8f0ff;
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 12px;
+  margin-top: 8px;
+  box-shadow: 0 2px 5px rgba(200, 150, 255, 0.3);
+}
+
+.profile-nim {
+  font-size: 1.1rem;
+  color: #5b5b8a;
+  font-style: italic;
+  background-color: #f8f0ff;
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 12px;
+  margin-top: 8px;
+  box-shadow: 0 2px 5px rgba(200, 150, 255, 0.3);
+}
+
+.btn-youtube {
+  display: inline-block;
+  background-color: #fc7c93;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 4px 10px rgba(255, 77, 109, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-youtube:hover {
+  background-color: #ff758f;
+  transform: scale(1.05);
+}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Blog Bintang</h1>
+    <nav>
+      <a href="#profile">Home</a>
+      <a href="#artikel">Artikel</a>
+      <a href="#kontak">Kontak</a>
+      <a href="https://www.ubpkarawang.ac.id" target="_blank" class="btn-ubp">Kunjungi Website UBP</a>
+    </nav>
+  </header>
+<section id="profile" class="profile-section">
+  <img src="pictb.jpeg" alt="Foto Profil" class="profile-pic">
+  <h2 class="profile-name">Bintang Putri Az Zahra</h2>
+  <p class="profile-kelas">Kelas: IF24E</p>
+  <p class="profile-nim">NIM: 22416255201175</p>
+</section>
+<a href="https://youtu.be/p9ucqGouSPo?si=B0yoQNzFV_-4-nwt" target="_blank" class="btn-youtube">
+  <span style="font-size:18px;">▶️</span> Lihat Video Tutorial MySQL
+</a>
+  <main>
+    <article>
+      <h1 class="post-title">Memahami Atribut, Entitas, dan Relasi dalam ERD</h1>
+      <div class="meta">Dipost oleh Bintang Putri Az Zahra • 5 Oktober 2025</div>
+
+      <p>
+        <section id="artikel">
+        <strong>Entity Relationship Diagram (ERD)</strong> adalah salah satu alat penting dalam perancangan basis data.
+        Dengan ERD, kita dapat memvisualisasikan bagaimana data saling terhubung dalam sebuah sistem.
+        Tiga komponen utama dalam ERD adalah <strong>Entitas</strong>, <strong>Atribut</strong>, dan <strong>Relasi</strong>.
+      </p>
+
+      <h3>1. Entitas</h3>
+      <p>
+        Entitas adalah objek atau hal yang datanya ingin disimpan di dalam basis data.
+        Contohnya: <em>Mahasiswa</em>, <em>Dosen</em>, <em>Mata Kuliah</em>, atau <em>Transaksi</em>.
+        Setiap entitas biasanya direpresentasikan dengan kotak dalam ERD.
+      </p>
+
+      <h3>2. Atribut</h3>
+      <p>
+        Atribut adalah ciri atau informasi yang dimiliki oleh suatu entitas.
+        Misalnya entitas <em>Mahasiswa</em> dapat memiliki atribut seperti <code>NIM</code>, <code>Nama</code>, <code>Alamat</code>, dan <code>Tanggal Lahir</code>.
+        Atribut ditunjukkan dengan bentuk elips (oval) yang terhubung ke entitasnya.
+      </p>
+
+      <h3>3. Relasi</h3>
+      <p>
+        Relasi adalah hubungan antara dua atau lebih entitas.
+        Contohnya, entitas <em>Mahasiswa</em> memiliki relasi dengan <em>Mata Kuliah</em> melalui entitas <em>KRS</em> (Kartu Rencana Studi).
+        Relasi biasanya digambarkan dengan bentuk belah ketupat.
+      </section>
+      </p>
+    
+      <h3>Contoh ERD Sederhana</h3>
+      <img src="erd.png" alt="Contoh ERD Mahasiswa dan Mata Kuliah">
+
+      <table>
+        <thead>
+          <tr><th>Komponen</th><th>Contoh</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Entitas</td><td>Mahasiswa, Dosen, Mata Kuliah</td></tr>
+          <tr><td>Atribut</td><td>NIM, Nama, Kode MK</td></tr>
+          <tr><td>Relasi</td><td>Mengajar, Mengambil</td></tr>
+        </tbody>
+      </table>
+
+      <p style="margin-top:18px">
+        Dengan memahami ketiga komponen tersebut, kamu dapat membuat ERD yang lebih terstruktur dan mudah dibaca.
+        Langkah selanjutnya adalah mengonversi ERD ke dalam bentuk tabel pada basis data nyata.
+      </p>
+    </article>
+  </main>
+ <section id="kontak">
+  <footer>
+    © 2025 Blog Bintang — if24.bintangzahra@mhs.ubpkarawang.ac.id.
+  </footer>
+ </section>
+</body>
+</html>
